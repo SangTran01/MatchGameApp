@@ -1,24 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MatchCardGame" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Cyr-L6-5CS">
+                                <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-f4-EcM">
+                                <rect key="frame" x="50" y="39" width="782" height="340"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="By3-wZ-Nba">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="biL-Vr-ROd" customClass="CardCollectionViewCell" customModule="MatchCardGame" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="pQG-hD-X42">
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="jG8-UI-f6V">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="D9b-Qh-jiD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="jG8-UI-f6V" secondAttribute="bottom" id="4o3-AA-oDa"/>
+                                                <constraint firstItem="jG8-UI-f6V" firstAttribute="leading" secondItem="pQG-hD-X42" secondAttribute="leading" id="7HX-oe-VQn"/>
+                                                <constraint firstAttribute="trailing" secondItem="jG8-UI-f6V" secondAttribute="trailing" id="M3k-WH-2Wq"/>
+                                                <constraint firstItem="D9b-Qh-jiD" firstAttribute="leading" secondItem="pQG-hD-X42" secondAttribute="leading" id="NGI-qD-RZD"/>
+                                                <constraint firstItem="jG8-UI-f6V" firstAttribute="top" secondItem="pQG-hD-X42" secondAttribute="top" id="exA-jf-dD6"/>
+                                                <constraint firstAttribute="trailing" secondItem="D9b-Qh-jiD" secondAttribute="trailing" id="k5t-ky-IOp"/>
+                                                <constraint firstItem="D9b-Qh-jiD" firstAttribute="top" secondItem="pQG-hD-X42" secondAttribute="top" id="lA8-dC-uAb"/>
+                                                <constraint firstAttribute="bottom" secondItem="D9b-Qh-jiD" secondAttribute="bottom" id="ySt-jo-dSF"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="158" height="224"/>
+                                        <connections>
+                                            <outlet property="cardBack" destination="D9b-Qh-jiD" id="d3J-Ct-Ayg"/>
+                                            <outlet property="cardFront" destination="jG8-UI-f6V" id="RPX-Sy-AdV"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Cyr-L6-5CS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="1of-H9-9a8"/>
+                            <constraint firstItem="KYU-f4-EcM" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="20" id="7eN-oc-i9r"/>
+                            <constraint firstItem="Cyr-L6-5CS" firstAttribute="bottom" secondItem="8bC-Xf-vdC" secondAttribute="bottom" id="Ib4-Uc-PKB"/>
+                            <constraint firstItem="Cyr-L6-5CS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Mxh-Qp-U8q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="KYU-f4-EcM" secondAttribute="top" constant="20" id="V8b-Vo-a64"/>
+                            <constraint firstItem="Cyr-L6-5CS" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="bTf-r5-1vK"/>
+                            <constraint firstItem="KYU-f4-EcM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="iCI-ol-uA3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="KYU-f4-EcM" secondAttribute="trailing" constant="20" id="w1P-Gu-Rrw"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cardCollectionView" destination="KYU-f4-EcM" id="GWb-DV-M7p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.60714285714286" y="1.4492753623188408"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="158" height="224"/>
+        <image name="background" width="736" height="414"/>
+        <image name="card1" width="158" height="224"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
